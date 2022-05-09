@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   #end
 
   def create
-    post = Post.create(coparams[:content])
+    post = Post.create(content: params[:content])
+    # post = Post.create({content: "テスト"})
     render json:{ post: post }
   end
 end
